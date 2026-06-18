@@ -1,0 +1,116 @@
+/* ==========================
+   PÁGINA DIRETORES
+========================== */
+
+/* Título da página */
+main > section:first-child {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+main > section:first-child h2 {
+    margin-bottom: 15px;
+}
+
+main > section:first-child p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================
+   GALERIA DE DIRETORES
+========================== */
+
+.galeria-diretores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin: 40px 0;
+}
+
+.galeria-diretores article {
+    background-color: #ac1536;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.galeria-diretores article:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================
+   FIGURAS
+========================== */
+
+.galeria-diretores figure {
+    margin: 0;
+    text-align: center;
+}
+
+/* Imagens padronizadas */
+.galeria-diretores figure img {
+    width: 220px;
+    height: 330px;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+    margin: 0 auto;
+
+    border-radius: 10px;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Legenda */
+.galeria-diretores figure figcaption {
+    margin-top: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #F8FAFC;
+}
+
+/* Texto */
+.galeria-diretores article p {
+    margin-top: 15px;
+
+    color: #CBD5E1;
+
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media (max-width: 1000px) {
+
+    .galeria-diretores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .galeria-diretores {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-diretores figure img {
+        width: 200px;
+        height: 300px;
+    }
+}

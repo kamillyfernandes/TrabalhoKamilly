@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato</title>
+
+  <link rel="icon" type="image/png" href="../midia/claquete.ico" />
+  <link rel="stylesheet" href="../estilos/formulario.css" />
+  <link rel="stylesheet" href="../estilos/layout.css" />
+  <script defer src="../script/envioForms.js"></script>
+</head>
+
+<body> 
+
+  <header>
+    <img src="../midia/logo.png" class="logo" alt="Logo CineQuartaParede" />
+    <h1>FrameOver: Além da Tela</h1>
+  
+  </header>
+
+  <nav>
+    <ul class="menu-list">
+        <li>
+            <a href="../index.html">Início</a>
+        </li>
+
+        <li class="dropdown">
+            <a href="#">Explorar ▾</a>
+            <ul class="dropdown-content">
+                <li><a href="../pages/diretores.html">Diretores Marcantes</a></li>
+                <li><a href="../pages/recomendacoes.html">Recomendações</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="../pages/feedback.html">Feedback</a>
+        </li>
+    </ul>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container-form">
+
+    <!-- FORMULÁRIO -->
+    <form id="formulario">
+
+      <fieldset>
+        <legend>FEEDBACK DO SITE:</legend>
+
+        <label for="ipNome">Nome*</label>
+        <input type="text" id="ipNome" required placeholder="Digite seu nome">
+
+        <label for="ipEmail">Email*</label>
+        <input type="email" id="ipEmail" required placeholder="Digite seu email">
+
+        <label for="slNota">Avaliação do site</label>
+        <select id="slNota">
+          <option value="5">⭐⭐⭐⭐⭐ - Excelente</option>
+          <option value="4">⭐⭐⭐⭐ - Bom</option>
+          <option value="3">⭐⭐⭐ - Regular</option>
+          <option value="2">⭐⭐ - Ruim</option>
+          <option value="1">⭐ - Péssimo</option>
+        </select>
+
+        <label for="slConheceu">Como conheceu o site?</label>
+        <select id="slConheceu">
+          <option value="Amigos">Amigos</option>
+          <option value="Internet">Internet</option>
+          <option value="Redes Sociais">Redes Sociais</option>
+          <option value="Outros">Outros</option>
+        </select>
+
+        <label for="taMensagem">Seu feedback</label>
+        <textarea id="taMensagem" rows="5" placeholder=" Deixe sua opinião e compartilhe sugestões de filmes que você gostaria de ver no FrameOver."></textarea>
+
+        <button type="button" onclick="enviarDadosForm(event)">Enviar</button>
+        <button type="reset" onclick="limparConfirmacao()">Limpar</button>
+
+      </fieldset>
+    </form>
+
+    <!-- CONFIRMAÇÃO -->
+    <section id="secaoConfirmacao">
+      <h2>CONFIRMAÇÃO DO FEEDBACK</h2>
+
+      <p id="pNome"></p>
+      <p id="pEmail"></p>
+      <p id="pNota"></p>
+      <p id="pConheceu"></p>
+      <p id="pMensagem"></p>
+
+      <button type="button" onclick="concluirEnvio()">Confirmar envio</button>
+    </section>
+
+  </main>
+  
+  <aside class="curiosidades-cinema">
+
+    <h3>Comunidade FrameOver 💬</h3>
+
+    <article>
+      <h4>Últimas Sugestões</h4>
+      <p>Muitos cinéfilos estão pedindo uma seção inteiramente dedicada a análises de <strong>Filmes de Terror Psicológico</strong>. Deixe no seu formulário se você apoia essa ideia!</p>
+    </article>
+
+    <article>
+      <h4>Leitor em Destaque</h4>
+      <p><em>"O artigo sobre cinema analógico me fez querer comprar minha primeira câmera de película!"</em> — Lucas M., estudante de Cinema.</p>
+    </article>
+
+    <article>
+      <h4>Por que seu Feedback importa?</h4>
+      <p>Este espaço é moldado por estudantes de tecnologia e amantes da Sétima Arte. Cada opinião nos ajuda a melhorar a acessibilidade e a trazer análises ainda mais profundas.</p>
+    </article>
+
+  </aside>
+
+  <footer>
+  <p class="footer-call">Contate-nos:</p>
+
+  <address class="footer-contacts">
+    <a href="mailto:contato@frameover.com.br" title="E-mail de Contato">
+      <i class="fa-solid fa-envelope"></i> E-mail
+    </a>
+    <a href="#" target="_blank" title="Telefone de contato">
+      <i class="fa-brands fa-telefone"></i> Telefone
+    </a>
+  </address>
+
+  <p class="copyright">
+    Desenvolvido com elementos semânticos do HTML5 para melhor acessibilidade. <br>
+    &copy; 2026 Kamilly. Todos os direitos reservados.
+  </p>
+</footer>
+
+
+</body>
+</html>

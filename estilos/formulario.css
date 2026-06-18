@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0F0F0F;
+  color: #E2E8F0;
+}
+
+/* =========================
+CONTAINER PRINCIPAL
+========================= */
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 40px 0;
+}
+
+/* =========================
+FORMULÁRIO
+========================= */
+#formulario {
+  width: 100%;
+  max-width: 750px;
+  padding: 35px;
+
+  background-color: #1A1A1A;
+  border: 2px solid #E50914;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+fieldset legend {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #E50914;
+  margin-bottom: 25px;
+}
+
+form label {
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 25px;
+  border: 1px solid #2A2A2A;
+  background-color: #151515;
+  color: #E2E8F0;
+  font-size: 14px;
+}
+
+form textarea {
+  border-radius: 14px;
+  min-height: 110px;
+  resize: none;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #E50914;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+/* BOTÕES */
+form button {
+  flex: 1;
+  background-color: #E50914;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #B20710;
+}
+
+form button[type="reset"] {
+  background-color: #333;
+}
+
+/*Confirmação */
+#secaoConfirmacao {
+  width: 100%;
+  max-width: 750px;
+  padding: 30px;
+
+  background-color: #1A1A1A;
+  border: 2px dashed #E50914;
+  border-radius: 12px;
+
+  display: none;
+}
+
+#secaoConfirmacao.show {
+  display: block;
+}
+
+#secaoConfirmacao h2 {
+  text-align: center;
+  color: #E50914;
+  margin-bottom: 20px;
+}
+
+#secaoConfirmacao p {
+  margin-bottom: 10px;
+  color: #E2E8F0;
+}
+
+

@@ -1,0 +1,397 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* ===========================
+LAYOUT PRINCIPAL (GRID ATUALIZADO)
+=========================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0F0F0F;
+  color: #E2E8F0;
+
+  display: grid;
+  /* Três colunas: menu (220px), conteúdo (flexível) e lateral (300px) */
+  grid-template-columns: 220px 1fr 300px;
+  grid-template-rows: 120px 1fr auto;
+
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+
+  min-height: 100vh;
+}
+
+/* ===========================
+HEADER
+=========================== */
+header {
+  grid-area: header;
+  background: linear-gradient(135deg, #1A1A1A 0%, #242424 100%);
+  border-bottom: 3px solid #E50914;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  padding: 0 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFF;
+}
+
+/* ===========================
+NAV
+=========================== */
+nav {
+  grid-area: nav;
+  background-color: #151515;
+  border-right: 2px solid #E50914;
+  padding: 20px 0;
+}
+
+nav ul.menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul.menu-list > li {
+  position: relative;
+  border-bottom: 1px solid #2A2A2A;
+}
+
+nav ul.menu-list a {
+  color: #E2E8F0;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+  transition: 0.3s;
+}
+
+nav ul.menu-list a:hover {
+  background-color: #E50914;
+  padding-left: 25px;
+  color: #fff;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+
+  background-color: #1A1A1A;
+  border: 2px solid #E50914;
+  border-radius: 6px;
+
+  z-index: 9999;
+}
+
+.dropdown-content li a {
+  padding: 12px 20px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===========================
+MAIN
+=========================== */
+main {
+  grid-area: main;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* blocos dentro do main e sections */
+main > section,
+.content > article {
+  background-color: #1A1A1A;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #2A2A2A;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* figuras e imagens */
+main figure {
+  text-align: center;
+}
+
+main figure img,
+.imagem-destaque img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+figcaption {
+  margin-top: 12px;
+  color: #94A3B8;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* textos */
+h2 {
+  color: #E50914;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+ol li {
+  margin-bottom: 10px;
+}
+
+/* ===========================
+ASIDE (AGORA FORA DO MAIN)
+=========================== */
+aside.curiosidades-cinema {
+  grid-area: aside;
+  padding: 40px 20px 40px 0; /* Dá espaço nas laterais */
+  
+  /* Mantém o aside fixo no topo ao rolar a página para baixo */
+  
+  top: 0;
+  align-self: start; 
+}
+
+/* Caixa interna principal do aside */
+aside.curiosidades-cinema h3 {
+  color: #E50914;
+  font-size: 20px;
+  border-bottom: 2px solid #E50914;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Remove os estilos pesados herdados globalmente pelo seletor 'article' */
+aside.curiosidades-cinema article {
+  background-color: #1A1A1A;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #2A2A2A;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+aside.curiosidades-cinema h4 {
+  color: #FFF;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* ===========================
+FOOTER ULTRA LIMPO (SEM CLASSES)
+=========================== */
+footer {
+  grid-area: footer;
+  background-color: #0F0F0F;
+  color: #888888;
+  padding: 30px 20px;
+  border-top: 1px solid #222;
+  font-size: 13px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Seleciona o PRIMEIRO parágrafo dentro do footer ("Contate-nos:") */
+footer > p:first-of-type {
+  color: #888888;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Seleciona a tag address diretamente */
+footer address {
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Seleciona os links dentro do address */
+footer address a {
+  background-color: #050505;
+  color: #E2E8F0;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 18px;
+  border: 1px solid #2A2A2A;
+  border-radius: 30px;
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+footer address a:hover {
+  background-color: #1A1A1A;
+  border-color: #E50914;
+  color: #FFF;
+}
+
+/* Seleciona o ÚLTIMO parágrafo dentro do footer (Direitos Autorais) */
+footer > p:last-of-type {
+  text-align: center;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 12px;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  footer address {
+    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
+  }
+  footer address a {
+    justify-content: center;
+  }
+}
+/* ===========================
+RESPONSIVO
+=========================== */
+@media (max-width: 1024px) {
+  body {
+    /* Ajustado para refletir exatamente a estrutura das áreas */
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 120px auto auto; 
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer"; /* O aside será reposicionado no fluxo ou você pode embutir no fluxo abaixo */
+  }
+
+  /* Faz o aside se comportar como um bloco padrão abaixo do conteúdo principal */
+  aside.curiosidades-cinema {
+    grid-area: main; /* Alinha temporariamente na área central abaixo do conteúdo */
+    order: 2;
+    padding: 20px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    /* Ajustado para aceitar conteúdo dinâmico (auto) e o topo flexível */
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  /* Ajustes no Header para telas pequenas */
+  header {
+    height: auto;
+    padding: 20px;
+    flex-direction: column; /* Coloca logo e título um embaixo do outro no celular */
+    gap: 10px;
+  }
+
+  header .logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  header h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  /* Ajustes essenciais do Menu Mobile */
+  nav {
+    border-right: none;
+    border-bottom: 2px solid #E50914;
+    padding: 0;
+  }
+
+  nav ul.menu-list {
+    flex-direction: column; /* Lista vertical funciona melhor e evita quebras */
+  }
+
+  nav ul.menu-list > li {
+    border-bottom: 1px solid #2A2A2A;
+    width: 100%;
+  }
+
+  nav ul.menu-list a {
+    text-align: center;
+    padding: 12px;
+  }
+
+  /* Correção do Dropdown no celular */
+  .dropdown-content {
+    position: static; /* Tira o menu flutuante para ele empurrar o conteúdo para baixo */
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    background-color: #111;
+  }
+
+  /* Espaçamentos internos corrigidos */
+  main {
+    padding: 20px 15px;
+  }
+
+  aside.curiosidades-cinema {
+    padding: 20px 15px;
+  }
+}
