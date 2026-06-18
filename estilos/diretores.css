@@ -87,22 +87,5 @@ main > section:first-child p {
 }
 
 
-@media (max-width: 1000px) {
 
-    .galeria-diretores {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 700px) {
-
-    .galeria-diretores {
-        grid-template-columns: 1fr;
-    }
-
-    .galeria-diretores figure img {
-        width: 200px;
-        height: 300px;
-    }
-}
 
