@@ -105,6 +105,9 @@ nav ul.menu-list a:hover {
   border-radius: 6px;
 
   z-index: 9999;
+  
+  /* --- A CORREÇÃO ESTÁ AQUI --- */
+  list-style: none; /* Remove de vez as bolinhas indesejadas */
 }
 
 .dropdown-content li a {
@@ -115,7 +118,7 @@ nav ul.menu-list a:hover {
   display: block;
 }
 
-/MAIN*/
+/*MAIN*/
 main {
   grid-area: main;
   padding: 40px;
@@ -179,7 +182,7 @@ ol li {
   margin-bottom: 10px;
 }
 
-/*aside*/
+/*ASIDE*/
 aside.curiosidades-cinema {
   grid-area: aside;
   padding: 40px 20px 40px 0; 
