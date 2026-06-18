@@ -4,13 +4,13 @@ main section figure {
   text-align: center;
 }
 
-/* padronização real das imagens */
+
 main section figure img {
   width: 220px;
   height: 330px;
 
-  object-fit: cover;      /* ESSENCIAL: corta sem deformar */
-  object-position: center; /* mantém foco no meio */
+  object-fit: cover;     
+  object-position: center; 
 
   display: block;
   margin: 0 auto;
