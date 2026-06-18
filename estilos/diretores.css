@@ -1,6 +1,4 @@
-/* ==========================
-   PÁGINA DIRETORES
-========================== */
+
 
 /* Título da página */
 main > section:first-child {
@@ -18,9 +16,7 @@ main > section:first-child p {
     line-height: 1.6;
 }
 
-/* ==========================
-   GALERIA DE DIRETORES
-========================== */
+/* GALERIA DE DIRETORES*/
 
 .galeria-diretores {
     display: grid;
@@ -47,9 +43,7 @@ main > section:first-child p {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* ==========================
-   FIGURAS
-========================== */
+/* FIGURAS*/
 
 .galeria-diretores figure {
     margin: 0;
@@ -92,25 +86,4 @@ main > section:first-child p {
     font-size: 15px;
 }
 
-/* ==========================
-   RESPONSIVIDADE
-========================== */
 
-@media (max-width: 1000px) {
-
-    .galeria-diretores {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 700px) {
-
-    .galeria-diretores {
-        grid-template-columns: 1fr;
-    }
-
-    .galeria-diretores figure img {
-        width: 200px;
-        height: 300px;
-    }
-}
