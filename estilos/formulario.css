@@ -14,9 +14,7 @@ body {
   color: #E2E8F0;
 }
 
-/* =========================
-CONTAINER PRINCIPAL
-========================= */
+/* CONTAINER PRINCIPAL */
 .container-form {
   display: flex;
   flex-direction: column;
@@ -25,9 +23,7 @@ CONTAINER PRINCIPAL
   padding: 40px 0;
 }
 
-/* =========================
-FORMULÁRIO
-========================= */
+/*FORMULÁRIO */
 #formulario {
   width: 100%;
   max-width: 750px;
@@ -110,7 +106,7 @@ form button[type="reset"] {
   background-color: #333;
 }
 
-/*Confirmação */
+/*CCONFIRMÇÃO*/
 #secaoConfirmacao {
   width: 100%;
   max-width: 750px;
